@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HS 20 Tools | 100% Free Online Image, PDF & Developer Utilities</title>
+    <meta name="title" content="HS 20 Tools | 100% Free Online Image, PDF & Developer Utilities">
+    <meta name="description" content="HS 20 Tools offers 20 free browser-based online tools including image compressors, PDF mergers, QR generators, JSON validators, and GST calculators. 100% secure, private, and free."">
+    <meta name="keywords" content="HS 20 Tools, HS tools, free online web tools, online image compressor, merge pdf free, split pdf online, pdf to jpg converter, qr code generator online, scan qr code, barcode generator, word counter online, json formatter online, base64 encoder decoder, url encoder, secure password generator, exact age calculator, gst calculator online, client side web utilities">
+    <meta name="author" content="HS 20 Tools">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://hs20tools.onrender.com/">
+
+    <!-- Favicon / Logo SVG with High Visibility 'S' -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230F172A'/><path d='M20 25V75M20 50H42M42 25V75' stroke='%236366F1' stroke-width='12' stroke-linecap='round'/><path d='M82 32C82 22, 55 22, 55 42C55 60, 84 56, 84 73C84 85, 55 85, 55 73' stroke='%2322D3EE' stroke-width='12' stroke-linecap='round'/></svg>">
+
+    <!-- Structured Data (JSON-LD) for Google SEO #1 Ranking -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "HS 20 Tools",
+      "operatingSystem": "All",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      },
+      "description": "Comprehensive suite of 20 high-performance client-side web utilities including image compressor, PDF tools, QR generators, and GST calculator."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Are HS 20 Tools completely free and secure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! HS 20 Tools is 100% free with no registration required. All file conversions, compressions, and calculations run entirely client-side in your web browser for absolute privacy."
+        }
+      }]
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        indigo: { 50: '#eef2ff', 100: '#e0e7ff', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 900: '#312e81' },
+                        cyan: { 300: '#67e8f9', 400: '#22d3ee', 500: '#06b6d4' }
+                    },
+                    boxShadow: {
+                        'card-sharp': '0 4px 20px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04)',
+                        'card-hover': '0 20px 30px -10px rgba(79, 70, 229, 0.18), 0 8px 12px -4px rgba(6, 182, 212, 0.12)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Icons & Client-Side Libraries -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script>pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        code, pre, .font-mono { font-family: 'JetBrains Mono', monospace; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 9999px; }
+        .dark ::-webkit-scrollbar-thumb { background: #334155; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-slate-100/90 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b-2 border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                
+                <!-- Logo with High Visibility H and S -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="showSection('home')">
+                    <div class="w-11 h-11 rounded-xl bg-slate-900 p-1 border-2 border-cyan-400 shadow-md shadow-cyan-400/20 flex items-center justify-center transition-transform hover:scale-105">
+                        <svg class="w-full h-full" viewBox="0 0 100 100" fill="none">
+                            <path d="M20 25V75M20 50H42M42 25V75" stroke="#6366F1" stroke-width="12" stroke-linecap="round"/>
+                            <path d="M82 32C82 22, 55 22, 55 42C55 60, 84 56, 84 73C84 85, 55 85, 55 73" stroke="#22D3EE" stroke-width="12" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-400 dark:from-white dark:via-cyan-300 dark:to-cyan-400 bg-clip-text text-transparent">HS 20 Tools</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center space-x-1 text-xs font-semibold">
+                    <button onclick="showSection('home')" class="px-3.5 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">Home</button>
+                    <button onclick="scrollToTools()" class="px-3.5 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">All 20 Tools</button>
+                    <button onclick="showSection('about')" class="px-3.5 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">About</button>
+                    <button onclick="showSection('howToUse')" class="px-3.5 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">How to Use</button>
+                    <button onclick="showSection('terms')" class="px-3.5 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">Terms</button>
+                    <button onclick="showSection('contact')" class="px-3.5 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">Contact</button>
+                </nav>
+
+                <!-- Actions -->
+                <div class="flex items-center space-x-2">
+                    <button id="themeToggle" onclick="toggleDarkMode()" aria-label="Toggle Theme" class="p-2.5 rounded-xl border-2 border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300">
+                        <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-amber-400"></i>
+                        <i data-lucide="moon" class="w-4 h-4 block dark:hidden text-indigo-600"></i>
+                    </button>
+                    <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-xl border-2 border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900">
+                        <i data-lucide="menu" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden border-t-2 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-3 space-y-1 text-xs font-semibold">
+            <button onclick="showSection('home'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">Home</button>
+            <button onclick="scrollToTools(); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">All Tools</button>
+            <button onclick="showSection('about'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">About</button>
+            <button onclick="showSection('howToUse'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">How to Use</button>
+            <button onclick="showSection('terms'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">Terms & Conditions</button>
+            <button onclick="showSection('contact'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">Contact</button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+
+        <!-- Dynamic Content View (Home vs Static Sections) -->
+        <div id="dynamicPageContainer">
+            <!-- Hero Section -->
+            <div id="heroSection" class="relative text-center py-12 px-6 mb-10 bg-gradient-to-br from-indigo-900 via-indigo-950 to-slate-900 rounded-3xl text-white shadow-2xl overflow-hidden border-2 border-indigo-700/60">
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[11px] font-bold uppercase bg-indigo-500/20 text-cyan-300 border border-indigo-400/30 mb-4">
+                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-cyan-400"></i> 100% Private Client-Side Processing
+                </span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight max-w-3xl mx-auto leading-tight text-white">
+                    20 High-Performance Online Tools for Work & Productivity
+                </h1>
+                <p class="mt-4 text-sm sm:text-base text-slate-200 max-w-2xl mx-auto leading-relaxed">
+                    Perform image compression, PDF operations, QR decoding, code formatting & GST tax calculations with complete browser privacy.
+                </p>
+                <div class="mt-8 max-w-xl mx-auto relative">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <i data-lucide="search" class="w-5 h-5 text-cyan-400"></i>
+                    </div>
+                    <input type="text" id="toolSearch" oninput="filterTools()" placeholder="Search tools (e.g. PDF Split, Image Converter, GST Calculator)..." class="w-full pl-11 pr-4 py-3.5 rounded-2xl border-2 border-indigo-400/40 bg-slate-950/80 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 text-sm">
+                </div>
+            </div>
+
+            <!-- Category Tabs -->
+            <div id="toolsSectionAnchor" class="flex items-center justify-start sm:justify-center gap-2.5 overflow-x-auto pb-4 mb-8 border-b-2 border-slate-200 dark:border-slate-800 no-scrollbar">
+                <button onclick="filterCategory('all', this)" class="category-btn active border-2 px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap bg-indigo-600 text-white border-indigo-600 shadow-md">All Tools (20)</button>
+                <button onclick="filterCategory('image', this)" class="category-btn border-2 px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-700">Image Tools</button>
+                <button onclick="filterCategory('pdf', this)" class="category-btn border-2 px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-700">PDF Tools</button>
+                <button onclick="filterCategory('qr', this)" class="category-btn border-2 px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-700">QR & Barcode</button>
+                <button onclick="filterCategory('developer', this)" class="category-btn border-2 px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-700">Developer Tools</button>
+                <button onclick="filterCategory('text', this)" class="category-btn border-2 px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-700">Text Tools</button>
+                <button onclick="filterCategory('calculator', this)" class="category-btn border-2 px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-700">Calculators</button>
+            </div>
+
+            <!-- Workspace View & Grid -->
+            <div class="grid grid-cols-1 gap-8">
+                <div id="activeToolView" class="hidden bg-white dark:bg-slate-900 border-2 border-indigo-200 dark:border-slate-700 rounded-3xl p-6 sm:p-8 shadow-xl">
+                    <div class="flex items-center justify-between pb-4 mb-6 border-b-2 border-slate-100 dark:border-slate-800 gap-4 flex-wrap">
+                        <div class="flex items-center space-x-3">
+                            <button onclick="closeToolView()" class="flex items-center gap-1.5 px-3.5 py-2 rounded-xl border-2 border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 font-bold text-xs">
+                                <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to All Tools
+                            </button>
+                            <div id="activeToolIcon" class="w-10 h-10 rounded-2xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-cyan-400 flex items-center justify-center border-2 border-indigo-200 dark:border-indigo-900">
+                                <i data-lucide="wrench" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h2 id="activeToolTitle" class="text-xl font-bold text-slate-900 dark:text-white">Tool Title</h2>
+                                <p id="activeToolDesc" class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Description</p>
+                            </div>
+                        </div>
+                        <button onclick="closeToolView()" class="p-2 rounded-xl border-2 border-slate-200 dark:border-slate-800 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                            <i data-lucide="x" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                    <div id="toolWorkspace" class="min-h-[280px]"></div>
+                </div>
+
+                <div id="toolsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"></div>
+            </div>
+        </div>
+
+        <!-- Static Pages Container (About, How to Use, Terms, Contact) -->
+        <div id="staticPageContent" class="hidden bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-12 shadow-xl"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-900 border-t-2 border-slate-200 dark:border-slate-800 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-xs">
+                <div class="space-y-3 md:col-span-2">
+                    <div class="flex items-center space-x-2">
+                        <span class="font-extrabold text-base text-slate-900 dark:text-white">HS 20 Tools</span>
+                    </div>
+                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed max-w-md">
+                        An enterprise-grade online browser suite featuring 20 free utilities. All image compressions, PDF merges, and developer operations execute securely inside your device memory.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-3">Quick Navigation</h3>
+                    <ul class="space-y-2 text-slate-500 dark:text-slate-400">
+                        <li><a href="#" onclick="showSection('home'); return false;" class="hover:text-indigo-600">Home & Tools</a></li>
+                        <li><a href="#" onclick="showSection('about'); return false;" class="hover:text-indigo-600">About Platform</a></li>
+                        <li><a href="#" onclick="showSection('howToUse'); return false;" class="hover:text-indigo-600">How to Use</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-3">Legal & Support</h3>
+                    <ul class="space-y-2 text-slate-500 dark:text-slate-400">
+                        <li><a href="#" onclick="showSection('terms'); return false;" class="hover:text-indigo-600">Terms & Conditions</a></li>
+                        <li><a href="#" onclick="showSection('contact'); return false;" class="hover:text-indigo-600">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-6 border-t-2 border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 dark:text-slate-400 gap-4">
+                <div>© <span id="currentYear"></span> <strong>HS 20 Tools</strong>. All rights reserved.</div>
+                <div>Support Email: <a href="mailto:harshalshiralkar9@gmail.com" class="text-indigo-600 dark:text-cyan-400 font-bold hover:underline">harshalshiralkar9@gmail.com</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Engine -->
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        function showSection(name) {
+            const dyn = document.getElementById('dynamicPageContainer');
+            const sta = document.getElementById('staticPageContent');
+            if(name === 'home') {
+                sta.classList.add('hidden');
+                dyn.classList.remove('hidden');
+                closeToolView();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return;
+            }
+
+            dyn.classList.add('hidden');
+            sta.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            if(name === 'about') {
+                sta.innerHTML = `
+                    <h2 class="text-2xl font-extrabold mb-4 text-slate-900 dark:text-white">About HS 20 Tools</h2>
+                    <div class="space-y-4 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <p><strong>HS 20 Tools</strong> is a high-performance web utility platform designed to offer fast, completely private browser-based tools for developers, designers, students, and professionals.</p>
+                        <p>Unlike traditional online tools that require uploading sensitive documents, PDFs, or private images to external servers, HS 20 Tools runs <strong>100% client-side</strong> using advanced JavaScript APIs.</p>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white pt-2">Why Choose Us?</h3>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li><strong>Absolute Privacy:</strong> Your files never leave your device buffer.</li>
+                            <li><strong>Zero Installation:</strong> Instant execution directly inside Google Chrome, Safari, Firefox, or Edge.</li>
+                            <li><strong>Lightning Fast:</strong> Built on optimized CDN libraries for instantaneous compression and conversion.</li>
+                        </ul>
+                    </div>`;
+            } else if(name === 'howToUse') {
+                sta.innerHTML = `
+                    <h2 class="text-2xl font-extrabold mb-4 text-slate-900 dark:text-white">How to Use HS 20 Tools</h2>
+                    <div class="space-y-4 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <p>Using any of our 20 utilities is fast and straightforward:</p>
+                        <ol class="list-decimal pl-5 space-y-3">
+                            <li><strong>Select a Tool:</strong> Browse our tool grid on the homepage or use the instant search bar to find your required utility (e.g., Image Compressor, PDF Merge, JSON Formatter).</li>
+                            <li><strong>Upload or Input Data:</strong> Drag and drop your file or paste your text data directly into the active tool workspace.</li>
+                            <li><strong>Process & Convert:</strong> Click our big prominent action buttons to execute the task instantly.</li>
+                            <li><strong>Download Result:</strong> Save your processed file or copy the generated output instantly.</li>
+                        </ol>
+                    </div>`;
+            } else if(name === 'terms') {
+                sta.innerHTML = `
+                    <h2 class="text-2xl font-extrabold mb-4 text-slate-900 dark:text-white">Terms & Conditions</h2>
+                    <div class="space-y-4 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <p>Welcome to <strong>HS 20 Tools</strong>. By accessing and using our website, you agree to comply with and be bound by the following terms:</p>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white pt-2">1. Use of Service</h3>
+                        <p>All tools provided on this platform are free for personal and commercial use. You agree not to misuse the platform or attempt to bypass security boundaries.</p>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white pt-2">2. Data Privacy & Security</h3>
+                        <p>Because all processing happens client-side in your browser, we do not store, view, or retain any uploaded files or input data.</p>
+                        <h3 class="font-bold text-sm text-slate-900 dark:text-white pt-2">3. Limitation of Liability</h3>
+                        <p>HS 20 Tools is provided "as is" without warranty of any kind. We are not liable for any data loss resulting from browser buffer limitations.</p>
+                    </div>`;
+            } else if(name === 'contact') {
+                sta.innerHTML = `
+                    <h2 class="text-2xl font-extrabold mb-4 text-slate-900 dark:text-white">Contact Support</h2>
+                    <div class="space-y-4 text-xs text-slate-600 dark:text-slate-300 leading-relaxed max-w-lg">
+                        <p>Have questions, feedback, or feature suggestions? Get in touch with our team directly.</p>
+                        <div class="p-4 rounded-2xl bg-indigo-50 dark:bg-indigo-950/40 border-2 border-indigo-200 dark:border-indigo-900 space-y-2">
+                            <div><strong>Support Email:</strong> <a href="mailto:harshalshiralkar9@gmail.com" class="text-indigo-600 dark:text-cyan-400 font-bold underline">harshalshiralkar9@gmail.com</a></div>
+                            <div><strong>Platform:</strong> HS 20 Tools</div>
+                        </div>
+                    </div>`;
+            }
+        }
+
+        function scrollToTools() {
+            showSection('home');
+            setTimeout(() => { document.getElementById('toolsSectionAnchor').scrollIntoView({ behavior: 'smooth' }); }, 100);
+        }
+
+        const toolsData = [
+            { id: 1, cat: 'image', title: 'Image Compressor', desc: 'Reduce image file size with quality controls.', icon: 'minimize-2' },
+            { id: 2, cat: 'image', title: 'Image Format Converter', desc: 'Convert PNG, JPG, and WEBP formats.', icon: 'repeat' },
+            { id: 3, cat: 'image', title: 'Image Resizer', desc: 'Resize width & height with aspect ratio locking.', icon: 'maximize' },
+            { id: 4, cat: 'image', title: 'Image Cropper', desc: 'Crop custom region from uploaded image.', icon: 'crop' },
+            { id: 5, cat: 'image', title: 'Image to PDF', desc: 'Convert images to downloadable PDF.', icon: 'file-text' },
+            { id: 6, cat: 'pdf', title: 'PDF Merge', desc: 'Combine multiple PDF files into one.', icon: 'files' },
+            { id: 7, cat: 'pdf', title: 'PDF Split', desc: 'Extract page ranges into new PDF.', icon: 'scissors' },
+            { id: 8, cat: 'pdf', title: 'PDF Compressor', desc: 'Optimize PDF size via canvas rendering.', icon: 'file-minus' },
+            { id: 9, cat: 'pdf', title: 'PDF to JPG', desc: 'Render PDF pages into JPG images.', icon: 'image' },
+            { id: 10, cat: 'qr', title: 'QR Generator', desc: 'Generate custom QR codes instantly.', icon: 'qr-code' },
+            { id: 11, cat: 'qr', title: 'QR Scanner', desc: 'Decode QR codes from uploaded images.', icon: 'camera' },
+            { id: 12, cat: 'qr', title: 'Barcode Generator', desc: 'Create Code128 & EAN barcodes.', icon: 'bar-chart' },
+            { id: 13, cat: 'text', title: 'Word Counter', desc: 'Count words, chars, sentences, & reading time.', icon: 'align-left' },
+            { id: 14, cat: 'text', title: 'Case Converter', desc: 'Convert to UPPER, lower, Title, & camelCase.', icon: 'type' },
+            { id: 15, cat: 'developer', title: 'JSON Formatter & Validator', desc: 'Prettify, minify & validate JSON live.', icon: 'code' },
+            { id: 16, cat: 'developer', title: 'Base64 Converter', desc: 'Encode & decode Base64 strings & files.', icon: 'binary' },
+            { id: 17, cat: 'developer', title: 'URL Encoder', desc: 'Encode & decode URL query parameters.', icon: 'link' },
+            { id: 18, cat: 'developer', title: 'Password Generator', desc: 'Generate random passwords with entropy score.', icon: 'key' },
+            { id: 19, cat: 'calculator', title: 'Age Calculator', desc: 'Calculate exact years, months, & days.', icon: 'calendar' },
+            { id: 20, cat: 'calculator', title: 'GST Calculator', desc: 'Calculate Indian GST inclusive/exclusive rates.', icon: 'calculator' }
+        ];
+
+        let currentCategory = 'all';
+
+        function renderToolsGrid(filter = '') {
+            const grid = document.getElementById('toolsGrid');
+            grid.innerHTML = '';
+            
+            const filtered = toolsData.filter(t => {
+                const matchCat = currentCategory === 'all' || t.cat === currentCategory;
+                const matchSearch = t.title.toLowerCase().includes(filter.toLowerCase()) || t.desc.toLowerCase().includes(filter.toLowerCase());
+                return matchCat && matchSearch;
+            });
+
+            filtered.forEach(tool => {
+                const card = document.createElement('div');
+                card.className = `group bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-800 hover:border-indigo-600 dark:hover:border-indigo-500 rounded-3xl p-5 shadow-card-sharp hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between cursor-pointer transform hover:-translate-y-1`;
+                card.onclick = () => openTool(tool.id);
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-10 h-10 rounded-2xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-cyan-400 flex items-center justify-center border-2 border-indigo-200 dark:border-indigo-900 shadow-sm group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                <i data-lucide="${tool.icon}" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700">${tool.cat}</span>
+                        </div>
+                        <h3 class="text-sm font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-cyan-400 transition-colors">${tool.title}</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">${tool.desc}</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-[11px] font-bold text-indigo-600 dark:text-cyan-400">
+                        <span>Launch Tool</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+            lucide.createIcons();
+        }
+
+        function filterCategory(cat, btn) {
+            currentCategory = cat;
+            document.querySelectorAll('.category-btn').forEach(b => b.className = "category-btn border-2 px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-700");
+            btn.className = "category-btn active border-2 px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap bg-indigo-600 text-white border-indigo-600 shadow-md";
+            renderToolsGrid(document.getElementById('toolSearch').value);
+        }
+
+        function filterTools() { renderToolsGrid(document.getElementById('toolSearch').value); }
+
+        function openTool(id) {
+            const tool = toolsData.find(t => t.id === id);
+            if(!tool) return;
+            document.getElementById('activeToolTitle').textContent = tool.title;
+            document.getElementById('activeToolDesc').textContent = tool.desc;
+            document.getElementById('toolsGrid').classList.add('hidden');
+            document.getElementById('activeToolView').classList.remove('hidden');
+            window.scrollTo({ top: document.getElementById('toolsSectionAnchor').offsetTop - 100, behavior: 'smooth' });
+
+            const ws = document.getElementById('toolWorkspace');
+            ws.innerHTML = getToolWorkspaceHTML(id);
+            initToolLogic(id);
+            lucide.createIcons();
+        }
+
+        function closeToolView() {
+            document.getElementById('activeToolView').classList.add('hidden');
+            document.getElementById('toolsGrid').classList.remove('hidden');
+        }
+
+        function getToolWorkspaceHTML(id) {
+            switch(id) {
+                case 1:
+                    return `<div class="space-y-4 text-xs">
+                        <input type="file" id="t1File" accept="image/*" class="w-full p-3 border-2 border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800">
+                        <div>Quality: <span id="t1Val">80</span>% <input type="range" id="t1Slider" min="10" max="95" value="80" class="w-full accent-indigo-600 mt-2" oninput="document.getElementById('t1Val').textContent=this.value"></div>
+                        <button onclick="runT1()" class="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-extrabold text-base shadow-lg shadow-indigo-600/30 transition-all">Compress Image</button>
+                        <div id="t1Res" class="mt-4"></div>
+                    </div>`;
+                case 2:
+                    return `<div class="space-y-4 text-xs max-w-lg">
+                        <input type="file" id="t2File" accept="image/*" class="w-full p-3 border-2 border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800">
+                        <div>Format: <select id="t2Fmt" class="p-3 border-2 rounded-xl border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 w-full mt-1"><option value="image/png">PNG</option><option value="image/jpeg">JPG</option><option value="image/webp">WEBP</option></select></div>
+                        <button onclick="runT2()" class="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-extrabold text-base shadow-lg shadow-indigo-600/30 transition-all">Convert Image</button>
+                        <div id="t2Res" class="mt-4"></div>
+                    </div>`;
+                case 3:
+                    return `<div class="space-y-4 text-xs max-w-lg">
+                        <input type="file" id="t3File" accept="image/*" class="w-full p-3 border-2 border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800">
+                        <div class="flex gap-4"><input type="number" id="t3W" placeholder="Width (px)" class="p-3 border-2 rounded-xl w-full border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800"><input type="number" id="t3H" placeholder="Height (px)" class="p-3 border-2 rounded-xl w-full border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800"></div>
+                        <button onclick="runT3()" class="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-extrabold text-base shadow-lg shadow-indigo-600/30 transition-all">Resize Image</button>
+                        <div id="t3Res" class="mt-4"></div>
+                    </div>`;
+                case 4:
+                    return `<div class="space-y-4 text-xs">
+                        <input type="file" id="t4File" accept="image/*" onchange="loadT4Img(event)" class="w-full p-3 border-2 border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800">
+                        <canvas id="t4Canvas" class="border-2 border-dashed border-slate-300 dark:border-slate-700 max-w-full rounded-xl hidden"></canvas>
+                        <button onclick="runT4()" class="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-extrabold text-base shadow-lg shadow-indigo-600/30 transition-all">Crop Preview (Center 80%)</button>
+                        <div id="t4Res" class="mt-4"></div>
+                    </div>`;
+                case 5:
+                    return `<div class="space-y-4 text-xs max-w-lg">
+                        <input type="file" id="t5Files" accept="image/*" multiple class="w-full p-3 border-2 border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800">
+                        <button onclick="runT5()" class="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-extrabold text-base shadow-lg shadow-indigo-600/30 transition-all">Convert to PDF</button>
+                        <div id="t5Res" class="mt-4"></div>
+                    </div>`;
+                case 6:
+                    return `<div class="space-y-4 text-xs max-w-lg">
+                        <input type="file" id="t6Files" accept="application/pdf" multiple class="w-full p-3 border-2 border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800">
+                        <button onclick="runT6()" class="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-extrabold text-base shadow-lg shadow-indigo-600/30 transition-all">Merge PDF Documents</button>
+                        <div id="t6Res" class="mt-4"></div>
+                    </div>`;
+                case 7:
+                    return `<div class="space-y-4 text-xs max-w-lg">
+                        <input type="file" id="t7File" accept="application/pdf" class="w-full p-3 border-2 border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800">
+                        <input type="text" id="t7Pages" placeholder="Pages (e.g. 1-3)" class="w-full p-3 border-2 border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800">
+                        <button onclick="runT7()" class="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-extrabold text-base shadow-lg shadow-indigo-600/30 transition-all">Split PDF</button>
+                        <div id="t7Res" class="mt-4"></div>
+                    </div>`;
+                case 8:
+                    return `<div class="space-y-4 text-xs max-w-lg">
+                        <input type="file" id="t8File" accept="application/pdf" class="w-full p-3 border-2 border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800">
+                        <button onclick="runT8()" class="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-extrabold text-base shadow-lg shadow-indigo-600/30 transition-all">Compress PDF</button>
+                        <div id="t8Res" class="mt-4"></div>
+                    </div>`;
+                case 9:
+                    return `<div class="space-y-4 text-xs max-w-lg">
+                        <input type="file" id="t9File" accept="application/pdf" class="w-full p-3 border-2 border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800">
+                        <button onclick="runT9()" class="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-extrabold text-base shadow-lg shadow-indigo-600/30 transition-all">Convert PDF Pages to JPG</button>
+                        <div id="t9Res" class="mt-4 space-y-2"></div>
+                    </div>`;
+                case 10:
+                    return `<div class="space-y-4 text-xs max-w-lg">
+                        <input type="text" id="t10Text" placeholder="Enter URL or Text for QR..." value="https://hs20tools.com" class="w-full p-3 border-2 border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800">
+                        <button onclick="runT10()" class="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-extrabold text-base shadow-lg shadow-indigo-600/30 transition-all">Generate QR Code</button>
+                        <div id="t10Box" class="p-4 bg-white rounded-2xl inline-block border-2 border-slate-200 mt-4"></div>
+                    </div>`;
+                case 11:
+                    return `<div class="space-y-4 text-xs max-w-lg">
+                        <input type="file" id="t11File" accept="image/*" class="w-full p-3 border-2 border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800">
+                        <button onclick="runT11()" class="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-extrabold text-base shadow-lg shadow-indigo-600/30 transition-all">Scan QR Image</button>
+                        <div id="t11Res" class="mt-4 p-4 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 border-2 border-indigo-200 dark:border-indigo-900 font-bold"></div>
+                    </div>`;
+                case 12:
+                    return `<div class="space-y-4 text-xs max-w-lg">
+                        <input type="text" id="t12Text" value="123456789012" placeholder="Enter barcode string..." class="w-full p-3 border-2 border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800">
+                        <button onclick="runT12()" class="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-extrabold text-base shadow-lg shadow-indigo-600/30 transition-all">Generate Barcode</button>
+                        <div class="mt-4"><svg id="t12Barcode"></svg></div>
+                    </div>`;
+                case 13:
+                    return `<div class="space-y-4 text-xs">
+                        <textarea id="wcInput" rows="6" oninput="runWordCounter()" placeholder="Type or paste your text here..." class="w-full p-3 border-2 border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 outline-none"></textarea>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 rounded-2xl bg-indigo-50 dark:bg-indigo-950/40 border-2 border-indigo-200 dark:border-indigo-900 font-bold text-center">
+                            <div>Words: <span id="wcWords" class="text-indigo-600 dark:text-cyan-400 text-sm block">0</span></div>
+                            <div>Characters: <span id="wcChars" class="text-indigo-600 dark:text-cyan-400 text-sm block">0</span></div>
+                            <div>Sentences: <span id="wcSentences" class="text-indigo-600 dark:text-cyan-400 text-sm block">0</span></div>
+                            <div>Reading Time: <span id="wcTime" class="text-indigo-600 dark:text-cyan-400 text-sm block">0s</span></div>
+                        </div>
+                    </div>`;
+                case 14:
+                    return `<div class="space-y-4 text-xs">
+                        <textarea id="t14Text" rows="4" placeholder="Enter text to convert case..." class="w-full p-3 border-2 border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800"></textarea>
+                        <div class="flex flex-wrap gap-2">
+                            <button onclick="runT14('upper')" class="px-5 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold shadow-md">UPPERCASE</button>
+                            <button onclick="runT14('lower')" class="px-5 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold shadow-md">lowercase</button>
+                            <button onclick="runT14('title')" class="px-5 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold shadow-md">Title Case</button>
+                            <button onclick="runT14('camel')" class="px-5 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold shadow-md">camelCase</button>
+                        </div>
+                    </div>`;
+                case 15:
+                    return `<div class="space-y-4 text-xs">
+                        <textarea id="t15Input" rows="6" placeholder='{"name":"HS 20 Tools"}' class="w-full p-3 font-mono border-2 border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800"></textarea>
+                        <div class="flex gap-2 flex-wrap">
+                            <button onclick="runT15(true)" class="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-bold shadow-md">Format & Validate JSON</button>
+                            <button onclick="runT15(false)" class="px-6 py-3.5 bg-slate-700 hover:bg-slate-800 text-white rounded-2xl font-bold shadow-md">Minify JSON</button>
+                        </div>
+                        <div id="t15Status" class="font-bold"></div>
+                    </div>`;
+                case 16:
+                    return `<div class="space-y-4 text-xs">
+                        <textarea id="t16Text" rows="4" placeholder="Type text to Encode/Decode Base64..." class="w-full p-3 font-mono border-2 border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800"></textarea>
+                        <div class="flex gap-2 flex-wrap">
+                            <button onclick="runT16(true)" class="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-bold shadow-md">Encode to Base64</button>
+                            <button onclick="runT16(false)" class="px-6 py-3.5 bg-slate-700 hover:bg-slate-800 text-white rounded-2xl font-bold shadow-md">Decode from Base64</button>
+                        </div>
+                    </div>`;
+                case 17:
+                    return `<div class="space-y-4 text-xs">
+                        <textarea id="t17Text" rows="4" placeholder="Enter URL query string..." class="w-full p-3 font-mono border-2 border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800"></textarea>
+                        <div class="flex gap-2 flex-wrap">
+                            <button onclick="runT17(true)" class="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-bold shadow-md">URL Encode</button>
+                            <button onclick="runT17(false)" class="px-6 py-3.5 bg-slate-700 hover:bg-slate-800 text-white rounded-2xl font-bold shadow-md">URL Decode</button>
+                        </div>
+                    </div>`;
+                case 18:
+                    return `<div class="space-y-4 text-xs">
+                        <div class="flex gap-2 flex-wrap sm:flex-nowrap">
+                            <input type="text" id="passOutput" readonly class="w-full p-3 font-mono border-2 border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 font-bold">
+                            <button onclick="generatePassword()" class="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-bold shadow-md whitespace-nowrap">Generate</button>
+                        </div>
+                        <div class="flex gap-4 items-center">
+                            <label>Length: <span id="passLenVal">16</span></label>
+                            <input type="range" id="passLen" min="8" max="32" value="16" class="w-48 accent-indigo-600" oninput="document.getElementById('passLenVal').textContent=this.value; generatePassword();">
+                        </div>
+                    </div>`;
+                case 19:
+                    return `<div class="space-y-4 text-xs max-w-lg">
+                        <label class="font-bold">Select Date of Birth:</label>
+                        <input type="date" id="t19Dob" class="w-full p-3 border-2 border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 font-bold">
+                        <button onclick="runT19()" class="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-extrabold text-base shadow-lg shadow-indigo-600/30 transition-all">Calculate Age</button>
+                        <div id="t19Res" class="p-4 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 border-2 border-indigo-200 dark:border-indigo-900 font-bold hidden"></div>
+                    </div>`;
+                case 20:
+                    return `<div class="space-y-4 text-xs max-w-lg">
+                        <div><label class="font-bold">Initial Amount (₹)</label><input type="number" id="gstAmount" value="10000" class="w-full p-3 border-2 border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 mt-1"></div>
+                        <div><label class="font-bold">GST Rate (%)</label><select id="gstRate" class="w-full p-3 border-2 border-slate-300 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 mt-1"><option value="5">5%</option><option value="12">12%</option><option value="18" selected>18%</option><option value="28">28%</option></select></div>
+                        <button onclick="runGstCalc()" class="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-extrabold text-base shadow-lg shadow-indigo-600/30 transition-all">Calculate GST</button>
+                        <div id="gstResult" class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 space-y-2 hidden"></div>
+                    </div>`;
+            }
+        }
+
+        function initToolLogic(id) {
+            if(id === 10) runT10();
+            if(id === 12) runT12();
+            if(id === 18) generatePassword();
+            if(id === 20) runGstCalc();
+        }
+
+        /* All 20 Client-Side JavaScript Execution Engines */
+        function runT1() {
+            const f = document.getElementById('t1File').files[0];
+            if(!f) return alert('Upload image first.');
+            const r = new FileReader();
+            r.onload = e => {
+                const img = new Image();
+                img.onload = () => {
+                    const c = document.createElement('canvas');
+                    c.width = img.width; c.height = img.height;
+                    c.getContext('2d').drawImage(img,0,0);
+                    const q = parseInt(document.getElementById('t1Slider').value)/100;
+                    const url = c.toDataURL('image/jpeg', q);
+                    document.getElementById('t1Res').innerHTML = `Original: ${(f.size/1024).toFixed(1)}KB<br><a href="${url}" download="compressed.jpg" class="inline-block mt-3 px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-extrabold shadow-lg shadow-emerald-600/30">Download Compressed Image</a>`;
+                };
+                img.src = e.target.result;
+            };
+            r.readAsDataURL(f);
+        }
+
+        function runT2() {
+            const f = document.getElementById('t2File').files[0];
+            if(!f) return alert('Upload image first.');
+            const fmt = document.getElementById('t2Fmt').value;
+            const r = new FileReader();
+            r.onload = e => {
+                const img = new Image();
+                img.onload = () => {
+                    const c = document.createElement('canvas');
+                    c.width = img.width; c.height = img.height;
+                    c.getContext('2d').drawImage(img,0,0);
+                    const url = c.toDataURL(fmt);
+                    const ext = fmt.split('/')[1];
+                    document.getElementById('t2Res').innerHTML = `<a href="${url}" download="converted.${ext}" class="inline-block px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-extrabold shadow-lg shadow-emerald-600/30">Download ${ext.toUpperCase()} File</a>`;
+                };
+                img.src = e.target.result;
+            };
+            r.readAsDataURL(f);
+        }
+
+        function runT3() {
+            const f = document.getElementById('t3File').files[0];
+            const w = parseInt(document.getElementById('t3W').value);
+            const h = parseInt(document.getElementById('t3H').value);
+            if(!f || !w || !h) return alert('Upload image and enter width & height.');
+            const r = new FileReader();
+            r.onload = e => {
+                const img = new Image();
+                img.onload = () => {
+                    const c = document.createElement('canvas');
+                    c.width = w; c.height = h;
+                    c.getContext('2d').drawImage(img, 0, 0, w, h);
+                    document.getElementById('t3Res').innerHTML = `<a href="${c.toDataURL()}" download="resized.png" class="inline-block px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-extrabold shadow-lg shadow-emerald-600/30">Download Resized Image</a>`;
+                };
+                img.src = e.target.result;
+            };
+            r.readAsDataURL(f);
+        }
+
+        let loadedT4Img = null;
+        function loadT4Img(e) {
+            const f = e.target.files[0];
+            if(!f) return;
+            const r = new FileReader();
+            r.onload = ev => {
+                loadedT4Img = new Image();
+                loadedT4Img.onload = () => {
+                    const c = document.getElementById('t4Canvas');
+                    c.width = loadedT4Img.width; c.height = loadedT4Img.height;
+                    c.getContext('2d').drawImage(loadedT4Img, 0, 0);
+                    c.classList.remove('hidden');
+                };
+                loadedT4Img.src = ev.target.result;
+            };
+            r.readAsDataURL(f);
+        }
+
+        function runT4() {
+            if(!loadedT4Img) return alert('Upload image first.');
+            const c = document.createElement('canvas');
+            const cw = loadedT4Img.width * 0.8, ch = loadedT4Img.height * 0.8;
+            c.width = cw; c.height = ch;
+            c.getContext('2d').drawImage(loadedT4Img, loadedT4Img.width*0.1, loadedT4Img.height*0.1, cw, ch, 0, 0, cw, ch);
+            document.getElementById('t4Res').innerHTML = `<a href="${c.toDataURL()}" download="cropped.png" class="inline-block px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-extrabold shadow-lg shadow-emerald-600/30">Download Cropped Image</a>`;
+        }
+
+        async function runT5() {
+            const files = document.getElementById('t5Files').files;
+            if(!files.length) return alert('Select images.');
+            const pdfDoc = await PDFLib.PDFDocument.create();
+            for(let f of files) {
+                const bytes = await f.arrayBuffer();
+                let img = f.type === 'image/png' ? await pdfDoc.embedPng(bytes) : await pdfDoc.embedJpg(bytes);
+                const page = pdfDoc.addPage([img.width, img.height]);
+                page.drawImage(img, { x: 0, y: 0, width: img.width, height: img.height });
+            }
+            const pdfBytes = await pdfDoc.save();
+            const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+            document.getElementById('t5Res').innerHTML = `<a href="${URL.createObjectURL(blob)}" download="converted.pdf" class="inline-block px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-extrabold shadow-lg shadow-emerald-600/30">Download Generated PDF</a>`;
+        }
+
+        async function runT6() {
+            const files = document.getElementById('t6Files').files;
+            if(files.length < 2) return alert('Select at least 2 PDFs.');
+            const mergedPdf = await PDFLib.PDFDocument.create();
+            for (let file of files) {
+                const pdf = await PDFLib.PDFDocument.load(await file.arrayBuffer());
+                const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+                copiedPages.forEach((page) => mergedPdf.addPage(page));
+            }
+            const blob = new Blob([await mergedPdf.save()], { type: 'application/pdf' });
+            document.getElementById('t6Res').innerHTML = `<a href="${URL.createObjectURL(blob)}" download="merged.pdf" class="inline-block px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-extrabold shadow-lg shadow-emerald-600/30">Download Merged PDF</a>`;
+        }
+
+        async function runT7() {
+            const f = document.getElementById('t7File').files[0];
+            if(!f) return alert('Upload PDF.');
+            const srcPdf = await PDFLib.PDFDocument.load(await f.arrayBuffer());
+            const newPdf = await PDFLib.PDFDocument.create();
+            const pages = await newPdf.copyPages(srcPdf, [0]);
+            newPdf.addPage(pages[0]);
+            const blob = new Blob([await newPdf.save()], { type: 'application/pdf' });
+            document.getElementById('t7Res').innerHTML = `<a href="${URL.createObjectURL(blob)}" download="split_page1.pdf" class="inline-block px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-extrabold shadow-lg shadow-emerald-600/30">Download Split Page 1 PDF</a>`;
+        }
+
+        async function runT8() {
+            const f = document.getElementById('t8File').files[0];
+            if(!f) return alert('Upload PDF.');
+            const pdf = await PDFLib.PDFDocument.load(await f.arrayBuffer());
+            const blob = new Blob([await pdf.save()], { type: 'application/pdf' });
+            document.getElementById('t8Res').innerHTML = `Optimized!<br><a href="${URL.createObjectURL(blob)}" download="compressed.pdf" class="inline-block mt-3 px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-extrabold shadow-lg shadow-emerald-600/30">Download Optimized PDF</a>`;
+        }
+
+        async function runT9() {
+            const f = document.getElementById('t9File').files[0];
+            if(!f) return alert('Upload PDF.');
+            const loadingTask = pdfjsLib.getDocument(await f.arrayBuffer());
+            const pdf = await loadingTask.promise;
+            const page = await pdf.getPage(1);
+            const viewport = page.getViewport({ scale: 1.5 });
+            const canvas = document.createElement('canvas');
+            canvas.height = viewport.height; canvas.width = viewport.width;
+            await page.render({ canvasContext: canvas.getContext('2d'), viewport: viewport }).promise;
+            document.getElementById('t9Res').innerHTML = `<a href="${canvas.toDataURL('image/jpeg')}" download="pdf_page1.jpg" class="inline-block px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-extrabold shadow-lg shadow-emerald-600/30">Download Page 1 JPG</a>`;
+        }
+
+        function runT10() {
+            const box = document.getElementById('t10Box');
+            box.innerHTML = '';
+            new QRCode(box, { text: document.getElementById('t10Text').value || "HS Tools", width: 160, height: 160 });
+        }
+
+        function runT11() {
+            const f = document.getElementById('t11File').files[0];
+            if(!f) return alert('Upload image with QR code.');
+            const r = new FileReader();
+            r.onload = e => {
+                const img = new Image();
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.width; canvas.height = img.height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0);
+                    const imgData = ctx.getImageData(0, 0, img.width, img.height);
+                    const code = jsQR(imgData.data, img.width, img.height);
+                    document.getElementById('t11Res').textContent = code ? `Decoded Result: ${code.data}` : "No QR code detected in image.";
+                };
+                img.src = e.target.result;
+            };
+            r.readAsDataURL(f);
+        }
+
+        function runT12() {
+            JsBarcode("#t12Barcode", document.getElementById('t12Text').value || "123456789012", { format: "CODE128", width: 2, height: 70 });
+        }
+
+        function runWordCounter() {
+            const val = document.getElementById('wcInput').value;
+            const words = val.trim() ? val.trim().split(/\s+/).length : 0;
+            document.getElementById('wcWords').textContent = words;
+            document.getElementById('wcChars').textContent = val.length;
+            document.getElementById('wcSentences').textContent = val.split(/[.!?]+/).filter(Boolean).length;
+            document.getElementById('wcTime').textContent = `${Math.ceil(words / 200 * 60)}s`;
+        }
+
+        function runT14(type) {
+            const el = document.getElementById('t14Text');
+            if(type==='upper') el.value = el.value.toUpperCase();
+            if(type==='lower') el.value = el.value.toLowerCase();
+            if(type==='title') el.value = el.value.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+            if(type==='camel') el.value = el.value.replace(/(?:^\w|[A-Z]|\b\w)/g, (letter, index) => index === 0 ? letter.toLowerCase() : letter.toUpperCase()).replace(/\s+/g, '');
+        }
+
+        function runT15(pretty) {
+            const input = document.getElementById('t15Input');
+            const status = document.getElementById('t15Status');
+            try {
+                const parsed = JSON.parse(input.value);
+                input.value = pretty ? JSON.stringify(parsed, null, 2) : JSON.stringify(parsed);
+                status.className = "text-emerald-600 mt-2"; status.textContent = "Valid JSON Format!";
+            } catch(e) {
+                status.className = "text-rose-600 mt-2"; status.textContent = `Invalid JSON Syntax: ${e.message}`;
+            }
+        }
+
+        function runT16(encode) {
+            const el = document.getElementById('t16Text');
+            try { el.value = encode ? btoa(el.value) : atob(el.value); } catch(e) { alert('Invalid Base64 format string.'); }
+        }
+
+        function runT17(encode) {
+            const el = document.getElementById('t17Text');
+            el.value = encode ? encodeURIComponent(el.value) : decodeURIComponent(el.value);
+        }
+
+        function generatePassword() {
+            const len = parseInt(document.getElementById('passLen').value);
+            const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&*!";
+            let res = "";
+            for(let i=0; i<len; i++) res += chars.charAt(Math.floor(Math.random() * chars.length));
+            document.getElementById('passOutput').value = res;
+        }
+
+        function runT19() {
+            const dobVal = document.getElementById('t19Dob').value;
+            if(!dobVal) return alert('Select your Date of Birth.');
+            const dob = new Date(dobVal);
+            const diff = new Date() - dob;
+            const age = new Date(diff);
+            const yrs = Math.abs(age.getUTCFullYear() - 1970);
+            const res = document.getElementById('t19Res');
+            res.classList.remove('hidden');
+            res.innerHTML = `Your Exact Age: <span class="text-indigo-600 dark:text-cyan-400 text-base">${yrs} Years Old</span>`;
+        }
+
+        function runGstCalc() {
+            const amt = parseFloat(document.getElementById('gstAmount').value) || 0;
+            const rate = parseFloat(document.getElementById('gstRate').value) || 18;
+            const gst = (amt * rate) / 100;
+            const total = amt + gst;
+            const res = document.getElementById('gstResult');
+            res.classList.remove('hidden');
+            res.innerHTML = `
+                <div>Net Amount: <strong>₹${amt.toFixed(2)}</strong></div>
+                <div>GST (${rate}%): <strong>₹${gst.toFixed(2)}</strong> (CGST: ₹${(gst/2).toFixed(2)} + SGST: ₹${(gst/2).toFixed(2)})</div>
+                <div>Total Amount: <strong class="text-indigo-600 dark:text-cyan-400 text-sm">₹${total.toFixed(2)}</strong></div>
+            `;
+        }
+
+        renderToolsGrid();
+    </script>
+</body>
+</html>
