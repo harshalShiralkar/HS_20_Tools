@@ -2,7 +2,6 @@
 
 **HS 20 Tools** is a powerful, high-performance web utility platform built for developers, designers, students, and professionals. It provides 20+ essential digital tools directly inside your web browser with absolute privacy and zero server uploads.
 
-🌐 **Live Website:** [https://hs20tools.onrender.com](https://hs20tools.onrender.com)
 
 ---
 
